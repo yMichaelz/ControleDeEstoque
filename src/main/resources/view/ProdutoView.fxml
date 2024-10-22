@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controledeestoque.controller.ProdutoControler">
+    <TextField fx:id="nomeField" promptText="Nome do Produto"/>
+    <TextField fx:id="descricaoField" promptText="Descrição"/>
+    <TextField fx:id="quantidadeField" promptText="Quantidade"/>
+    <TextField fx:id="precoField" promptText="Preço"/>
+    <Button fx:id="adicionarButton" text="Adicionar Produto" onAction="#adicionarProduto"/>
+
+    <TableView fx:id="tabelaProdutos">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID"/>
+            <TableColumn fx:id="nomeColumn" text="Nome"/>
+            <TableColumn fx:id="quantidadeColumn" text="Quantidade"/>
+            <TableColumn fx:id="precoColumn" text="Preço"/>
+        </columns>
+    </TableView>
+</VBox>
