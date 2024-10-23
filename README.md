@@ -18,7 +18,8 @@ CREATE DATABASE EstoqueBD;
 -- Conecte-se ao banco de dados
 \c EstoqueBD;
 
--- Criação da tabela de produtos
+-- Criação da tabela de produtos:
+
 CREATE TABLE produtos (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
@@ -26,20 +27,23 @@ CREATE TABLE produtos (
     preco DECIMAL(10, 2) NOT NULL
 );
 
--- Criação da tabela de fornecedores
+-- Criação da tabela de fornecedores:
+
 CREATE TABLE fornecedores (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     contato VARCHAR(255)
 );
 
--- Criação da tabela de categorias
+-- Criação da tabela de categorias:
+
 CREATE TABLE categorias (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(255) NOT NULL
 );
 
--- Alterar a tabela de produtos para adicionar chave estrangeira para categorias e fornecedores
+-- Alterar a tabela de produtos para adicionar chave estrangeira para categorias e fornecedores:
+
 ALTER TABLE produtos
 ADD COLUMN categoria_id INT REFERENCES categorias(id),
 ADD COLUMN fornecedor_id INT REFERENCES fornecedores(id);
